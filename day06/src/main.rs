@@ -73,8 +73,8 @@ fn parse_grid_into_blocks(grid: &Vec<Vec<char>>) -> Vec<Block>
             );
         }
 
-        // here we can benefit a bit from parsing the horizontal/vertical number together: we know
-        // how many columns of numbers to get because it's the size of the largest horizontal number
+        // here we can benefit a bit from parsing the horizontal/vertical numbers together: we know
+        // how many columns of numbers to get because it's the length of the largest horizontal number
         let column_count = horizontal_numbers.iter()
                                              .map(|&number| num_digits(number))
                                              .max()

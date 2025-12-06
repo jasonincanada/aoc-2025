@@ -48,7 +48,7 @@ fn accessible_rolls(grid: &Vec<Vec<char>>) -> Vec<(usize,usize)> {
             continue
         }
 
-        let count = neighbours(r, c, &grid)
+        let count = neighbours(r, c, grid)
             .into_iter()
             .filter(|(row, col)| grid[*row][*col] == '@')
             .count();

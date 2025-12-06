@@ -24,7 +24,7 @@ fn part1(input: &Input) -> u64 {
 fn part2(input: &Input) -> u64 {
     input.banks
          .iter()
-         .map(|bank| find_highest_joltage_k(bank, 12) as u64)
+         .map(|bank| find_highest_joltage_k(bank, 12))
          .sum()
 }
 
@@ -39,9 +39,9 @@ fn find_highest_joltage(bank: &Vec<u8>) -> u8 {
             continue
         }
 
-        for j in i+1 .. bank.len() {
-            if battery * 10 + bank[j] > highest {
-                highest = battery * 10 + bank[j]
+        for b in bank.iter().skip(i+1) {
+            if battery * 10 + b > highest {
+                highest = battery * 10 + b
             }
         }
     }

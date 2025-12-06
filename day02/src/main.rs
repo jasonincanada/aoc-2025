@@ -26,7 +26,6 @@ fn part2(_input: &Input) -> u64 {
 }
 
 // store just one half of the InvalidNumber, there's no point in storing the same number twice
-// shouldn't this have to be a u32 because it's always doubled when expanding to the full number??
 #[derive(Debug, PartialEq)]
 struct InvalidNumber(u64);
 
@@ -41,20 +40,20 @@ fn next_lower_invalid_number(n: u64) -> Option<InvalidNumber> {
 
     let num_digits = digits(n);
 
-    // any odd-number must be mapped down to the 9999 below it (ie: f(123) -> 99)
-    if num_digits % 2 != 0 {
+    // any odd-number of digits must be mapped down to the 9999 below it (ie: f(123) -> 99)
+    if !num_digits.is_multiple_of(2) {
         let exp = (num_digits - 1) / 2;
         return Some(InvalidNumber(10_u64.pow(exp) - 1))
     }
 
     let (left, right) = split_number_in_half(n);
 
-    // is this already an invalid number (left and rights halves match)
+    // is this already an invalid number (left and right halves match)
     if left == right {
         return Some(InvalidNumber(left));
     }
 
-    // if the right half is greater than the left, bring the rigt half down to match the left
+    // if the right half is greater than the left, bring the right half down to match the left
     // f(12347777) = 12341234
     else if right > left {
         return Some(InvalidNumber(left))
@@ -73,13 +72,13 @@ fn next_higher_invalid_number(n: u64) -> InvalidNumber {
     let num_digits = digits(n);
 
     // only when there are an even number of digits can the number be a smaller number duplicated
-    if num_digits % 2 != 0 {
+    if !num_digits.is_multiple_of(2) {
         return InvalidNumber(10_u64.pow(num_digits / 2))
     }
 
     let (left, right) = split_number_in_half(n);
 
-    // is this already an invalid number (left and rights halves match)
+    // is this already an invalid number (left and right halves match)
     if left == right {
         return InvalidNumber(left)
     }
@@ -91,14 +90,14 @@ fn next_higher_invalid_number(n: u64) -> InvalidNumber {
     }
 
     // f(12341200) = 12341234
-    return InvalidNumber(left)
+    InvalidNumber(left)
 }
 
 // count the number of invalid numbers between from and to, including the ends
 fn count_invalid_numbers_between(from: u64, to: u64) -> u64 {
     
-    let next_higher = next_higher_invalid_number(from as u64);
-    let next_lower  = next_lower_invalid_number(to as u64).expect("to should have a next lower invalid number");
+    let next_higher = next_higher_invalid_number(from);
+    let next_lower  = next_lower_invalid_number(to).expect("to should have a next lower invalid number");
 
     if next_lower.0 < next_higher.0 {
         0
@@ -108,8 +107,8 @@ fn count_invalid_numbers_between(from: u64, to: u64) -> u64 {
 }
 
 fn sum_invalid_numbers_between(from: u64, to: u64) -> u64 {
-    let next_higher = next_higher_invalid_number(from as u64);
-    let next_lower  = next_lower_invalid_number(to as u64).expect("to should have a next lower invalid number");
+    let next_higher = next_higher_invalid_number(from);
+    let next_lower  = next_lower_invalid_number(to).expect("to should have a next lower invalid number");
 
     if next_lower.0 < next_higher.0 {
         0
