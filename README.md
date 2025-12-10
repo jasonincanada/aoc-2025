@@ -4,14 +4,15 @@ My solutions for [Advent of Code 2025](http://adventofcode.com/2025) in Rust
 
 Visit the Advent of Code sub-reddit for discussions and other participants' code submissions here: https://old.reddit.com/r/adventofcode/
 
-| Day | Title                                                | Description                                      |
-| --- | ---------------------------------------------------- | ------------------------------------------------ |
-| 6   | [Trash Compactor](./day06/src/main.rs)               | Parse a grid of numbers in two directions        |
-| 5   | [Cafeteria](./day05/src/main.rs)                     | Count elements within overlapping ranges         |
-| 4   | [Printing Department](./day04/src/main.rs)           | Count items on a 2D grid                         |
-| 3   | [Lobby](./day03/src/main.rs)                         | Maximize joltage by choosing the right batteries |
-| 2   | [Gift Shop](./day02/src/main.rs)                     | Sum certain numbers in a range                   |
-| 1   | [Secret Entrance](./day01/src/main.rs)               | Count how many times a rotating dial hits 0      |
+| Day | Title                                                | Description                                      | Stars |
+| --- | ---------------------------------------------------- | ------------------------------------------------ | ----- |
+| 7   | [Laboratories](./day07/src/main.rs)                  | Laboratories                                     | ★★ |
+| 6   | [Trash Compactor](./day06/src/main.rs)               | Parse a grid of numbers in two directions        | ★★ |
+| 5   | [Cafeteria](./day05/src/main.rs)                     | Count elements within overlapping ranges         | ★★ |
+| 4   | [Printing Department](./day04/src/main.rs)           | Count items on a 2D grid                         | ★★ |
+| 3   | [Lobby](./day03/src/main.rs)                         | Maximize joltage by choosing the right batteries | ★★ |
+| 2   | [Gift Shop](./day02/src/main.rs)                     | Sum certain numbers in a range                   | ★  |
+| 1   | [Secret Entrance](./day01/src/main.rs)               | Count how many times a rotating dial hits 0      | ★★ |
 
 ## Past Years
 
