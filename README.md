@@ -6,10 +6,11 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      | Stars |
 | --- | ---------------------------------------------------- | ------------------------------------------------ | ----- |
+| 11  | [Reactor](./day11/src/main.rs)                       | Count paths through a directed acyclic graph     | ★★ |
 | 10  | [Factory](./day10/src/main.rs)                       | Push buttons to toggle on the correct lights     | ★  |
 | 9   | [Movie Theater](./day09/src/main.rs)                 | Find the biggest rectangle on a grid             | ★  |
 | 8   | Playground                                           | Use Union Find to construct clusters in 3D       |    |
-| 7   | [Laboratories](./day07/src/main.rs)                  | Laboratories                                     | ★★ |
+| 7   | [Laboratories](./day07/src/main.rs)                  | Count paths through a tree                       | ★★ |
 | 6   | [Trash Compactor](./day06/src/main.rs)               | Parse a grid of numbers in two directions        | ★★ |
 | 5   | [Cafeteria](./day05/src/main.rs)                     | Count elements within overlapping ranges         | ★★ |
 | 4   | [Printing Department](./day04/src/main.rs)           | Count items on a 2D grid                         | ★★ |
