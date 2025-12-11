@@ -81,7 +81,7 @@ fn go2(focus  : &str,
     }
 
     if let Some(&memo) = memos.get(focus) {
-        return memo.clone()
+        return memo
     }
 
     let mut memo = Memo {

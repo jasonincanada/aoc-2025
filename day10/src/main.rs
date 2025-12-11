@@ -23,7 +23,7 @@ struct Machine {
 // [.##.] (3) (1,3) (2) (2,3) (0,2) (0,1) {3,5,4,7}
 
 fn part1(input: &Input) -> usize {
-    let mut total_fewest_buttons = 0;
+    let mut total_fewest_presses = 0;
     
     let fewest_buttons =
         input.machines.iter()
@@ -50,20 +50,22 @@ fn part1(input: &Input) -> usize {
                           .filter(|m| m.buttons.len() == button_count);
                         
         for machine in machines_with_this_many_buttons {
-            let indicator_target: u32 = indicator_lights_to_target(&machine.indicator_lights);
+            // convert the string of lights to its integer equivalent
+            let target = indicator_lights_to_target(&machine.indicator_lights);
 
             for bitstring in &bitstrings {
-                let lights_on: u32 = get_lights_after_pressing_buttons(bitstring, &machine.buttons);
+                // simulate pressing the bit=1 buttons
+                let lights_on = get_lights_on_after_pressing_buttons(bitstring, &machine.buttons);
 
-                if lights_on == indicator_target {
-                    total_fewest_buttons += bitstring.len();
+                if lights_on == target {
+                    total_fewest_presses += bitstring.len();
                     break
                 }
             }
         }
     }
 
-    total_fewest_buttons
+    total_fewest_presses
 }
 
 fn part2(_input: &Input) -> u64 {
@@ -71,7 +73,7 @@ fn part2(_input: &Input) -> u64 {
 }
 
 
-fn get_lights_after_pressing_buttons(button_indexes: &[u8], buttons: &Vec<Vec<u32>>) -> u32 {
+fn get_lights_on_after_pressing_buttons(button_indexes: &[u8], buttons: &Vec<Vec<u32>>) -> u32 {
     let mut lights_on = 0 as u32;
 
     for idx in button_indexes {

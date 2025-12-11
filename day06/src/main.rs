@@ -24,7 +24,7 @@ fn calculate(input: &Input) -> (u64, u64)
     let mut horiz = 0;
     let mut vert  = 0;
 
-    for block in blocks.iter() {
+    for block in blocks {
         if block.symbol == '*' {
             horiz += block.horizontal_numbers.iter().product::<u64>();
             vert  += block.vertical_numbers  .iter().product::<u64>();
@@ -43,6 +43,13 @@ struct Block {
     horizontal_numbers: Vec<u64>,
     vertical_numbers  : Vec<u64>
 }
+
+/*
+    123 328  51 64 
+     45 64  387 23 
+      6 98  215 314
+    *   +   *   +  
+*/
 
 // strategy:
 //
