@@ -6,6 +6,7 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      | Stars |
 | --- | ---------------------------------------------------- | ------------------------------------------------ | ----- |
+| 12  | [Christmas Tree Farm](./day12/src/main.rs)           | Check if gifts can fit under a tree              | ★  |
 | 11  | [Reactor](./day11/src/main.rs)                       | Count paths through a directed acyclic graph     | ★★ |
 | 10  | [Factory](./day10/src/main.rs)                       | Push buttons to toggle on the correct lights     | ★  |
 | 9   | [Movie Theater](./day09/src/main.rs)                 | Find the biggest rectangle on a grid             | ★  |
